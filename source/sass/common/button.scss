@@ -1,0 +1,12 @@
+.button {
+    @include font ($size: 12px, $weight: 500);
+    text-transform: uppercase;
+    letter-spacing: 2%;
+    color: $color-primary;
+    cursor: pointer;
+
+    @media (min-width: $tablet-min-width) {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
