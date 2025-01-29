@@ -1,0 +1,56 @@
+.submenu__list {
+    @include list-reset();
+    position: relative;
+    display: grid;
+    margin-block-start: 0.5lh;
+
+    overflow: hidden;
+    line-height: 0;
+    color: transparent;
+    transition: line-height 0.5s, color 0.5s;
+}
+
+.submenu__item {
+    overflow: hidden;
+}
+
+.submenu__link {
+    @include font($family: $primary-font, $size: 16px, $height: inherit, $weight: 500);
+    display: block;
+    padding: 0.5lh 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #c1d3ed;
+}
+
+.submenu__link:hover,
+.submenu__link:focus,
+.submenu__link:focus-visible,
+.submenu__link:active {
+    color: $color-light;
+    outline: none;
+}
+
+.submenu::after {
+    content: '';
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: $color-light;
+    mask-image: url('/__spritemap#sprite-ico-arrow-down-view');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: auto;
+    transition: transform 0.5s;
+}
+
+.submenu.active ~ .submenu__list {
+    line-height: 1.2;
+}
+
+.submenu.active::after {
+    transform: rotate(180deg);
+}

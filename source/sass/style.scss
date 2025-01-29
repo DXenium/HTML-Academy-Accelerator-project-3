@@ -6,11 +6,16 @@
 
 @import "common/mixins";
 @import "common/font";
-@import "common/global";
 @import "common/variables";
+@import "common/global";
 @import "common/base";
 @import "common/button";
 
 
 // Blocks //
+
+@import "blocks/page";
+@import "blocks/header.scss";
+@import "blocks/menu";
+@import "blocks/submenu";
 
