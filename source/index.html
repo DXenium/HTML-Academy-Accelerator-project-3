@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-validate="html">
+<html class="page" lang="ru" data-validate="html">
 
 <head>
   <meta charset="UTF-8">
@@ -13,20 +13,48 @@
   <link rel="stylesheet" href="sass/style.scss">
 </head>
 
-<body class="page-body">
-  <header></header>
+<body class="page__body">
   <main>
-    <section></section>
+    <section data-test="hero">
+      <header class="header">
+        <picture>
+          <source srcset="img/logotype.svg" type="image/svg+xml" width="52" height="52">
+          <img class="header__logo logo" loading="lazy" src="img/logotype.svg" width="52" height="52" alt="Логотип компании Internship">
+        </picture>
+        <div class="menu">
+          <button class="header__button menu__button button" type="button" aria-expanded="false" aria-controls="list">Меню<span class="menu__icon"></span></button>
+            <ul class="menu__list" id="list" aria-hidden="true">
+              <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">О проекте</a></li>
+              <li class="menu__item"><a class="menu__link submenu" href="#" tabindex="-1" aria-expanded="false" aria-controls="sublist1">Программы</a>
+              <ul class="submenu__list" id="sublist1" aria-hidden="true">
+                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Стажировки</a></li>
+                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Волонтёрство</a></li>
+                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Учёба</a></li>
+                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Религия</a></li>
+              </ul></li>
+              <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Как поехать</a></li>
+              <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Отзывы</a></li>
+              <li class="menu__item"><a class="menu__link submenu" href="#" tabindex="-1" aria-expanded="false" aria-controls="sublist2">Новости</span></a>
+                <ul class="submenu__list" id="sublist2" aria-hidden="true">
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Эта неделя</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Прошлая неделя</a></li>
+                </ul></li>
+              <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Контакты</a></li>
+            </ul>
+        </div>
+
+      </header>
+      <div></div>
+    </section>
   </main>
   <footer></footer>
   <!-- пример использования спрайта -->
-  <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
   <svg>
     <use href="/__spritemap#sprite-user"></use>
-  </svg>
+  </svg> -->
   <!-- примеры требуемых атрибутов data-test="*" -->
-  <div data-test="hero">hero</div>
-  <div data-test="about">about</div>
+  <!-- <div data-test="about">about</div>
   <div data-test="programs">programs</div>
   <div data-test="grant">grant</div>
   <div data-test="news">news</div>
@@ -35,7 +63,7 @@
   <div data-test="contacts">contacts</div>
   <div data-test="form">form</div>
   <div data-test="footer">footer</div>
-  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script> -->
 </body>
 
 </html>

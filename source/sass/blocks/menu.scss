@@ -1,0 +1,98 @@
+.menu__button {
+  @include flex-box($flex-direction: row);
+  gap: 20px;
+  width: 134px;
+  padding: 3px 3px 3px 20px;
+  transition: width 0.5s;
+  will-change: width; 
+}
+
+.menu__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 44px;
+  background-color: $color-primary;
+  position: relative;
+  transition: background-color, 0.5s;
+}
+
+.menu__icon::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-light;
+  mask-image: url('/__spritemap#sprite-ico-menu-view');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: auto;
+  transition: background-color 0.5s, mask-image 0.5s;
+}
+
+.menu__button:hover .menu__icon {
+  background-color: $color-light;
+}
+
+.menu__button:hover .menu__icon::before {
+  background-color: $color-primary;
+}
+
+.menu__list {
+  @include list-reset();
+  width: 286px;
+  position: relative;
+  display: grid;
+  margin-block-start: 0.5lh;
+  background-color: $color-primary;
+  border-radius: 16px;
+
+  overflow: hidden;
+  line-height: 0;
+  color: transparent;
+  transition: line-height 0.3s, color 0.5s;
+}
+
+.menu__item {
+  overflow: hidden;
+}
+
+.menu__link {
+  @include font($family: $primary-font, $size: 16px, $height:inherit, $weight: 500);
+  display: block;
+  padding: 0.5lh 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #c1d3ed;
+  transition: color, 0.5s;
+}
+
+.menu__link:hover,
+.menu__link:focus,
+.menu__link:focus-visible,
+.menu__link:active  {
+  color: $color-light;
+  outline: none;
+}
+
+.menu__button.active {
+  width: 286px;
+  color: $color-light;
+  background-color: $color-primary;
+}
+
+.menu__button.active .menu__icon {
+  background-color: $color-light;
+}
+
+.menu__button.active .menu__icon::before {
+  mask-image: url('/__spritemap#sprite-ico-cross-view');
+  background-color: $color-primary;
+}
+
+.menu__button.active ~ .menu__list {
+  line-height: 1.2;
+}
