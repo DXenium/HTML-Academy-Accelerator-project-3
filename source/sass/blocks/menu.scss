@@ -1,10 +1,24 @@
+.menu {
+  @include flex-box($align-items: flex-end);
+
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .menu__button {
   @include flex-box($flex-direction: row);
+
   gap: 20px;
-  width: 134px;
-  padding: 3px 3px 3px 20px;
+  width: 136px;
+  padding: 3px 4px 3px 20px;
   transition: width 0.5s;
-  will-change: width; 
+  will-change: width;
+
+  @media (min-width: $tablet-min-width) {
+    padding: 4px 4px 4px 20px;
+  }
 }
 
 .menu__icon {
@@ -17,15 +31,15 @@
 }
 
 .menu__icon::before {
-  content: '';
-  width: 20px;
+  content: "";
+  width: 18px;
   height: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: $color-light;
-  mask-image: url('/__spritemap#sprite-ico-menu-view');
+  mask-image: url("/__spritemap#sprite-ico-menu-view");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: auto;
@@ -41,7 +55,8 @@
 }
 
 .menu__list {
-  @include list-reset();
+  @include list-reset;
+
   width: 286px;
   position: relative;
   display: grid;
@@ -60,7 +75,8 @@
 }
 
 .menu__link {
-  @include font($family: $primary-font, $size: 16px, $height:inherit, $weight: 500);
+  @include font($family: $primary-font, $size: 16px, $height: inherit, $weight: 500);
+
   display: block;
   padding: 0.5lh 25px;
   text-decoration: none;
@@ -73,7 +89,7 @@
 .menu__link:hover,
 .menu__link:focus,
 .menu__link:focus-visible,
-.menu__link:active  {
+.menu__link:active {
   color: $color-light;
   outline: none;
 }
@@ -89,7 +105,7 @@
 }
 
 .menu__button.active .menu__icon::before {
-  mask-image: url('/__spritemap#sprite-ico-cross-view');
+  mask-image: url("/__spritemap#sprite-ico-cross-view");
   background-color: $color-primary;
 }
 

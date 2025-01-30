@@ -1,0 +1,318 @@
+.hero {
+  width: $mobile-min-width;
+  margin: auto;
+
+  @media (min-width: $tablet-min-width) {
+    width: $tablet-min-width;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    width: $tablet-max-width;
+  }
+}
+
+.hero__slider .hero__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 229px auto 20px;
+  position: relative;
+  max-width: $mobile-min-width;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-min-width) {
+    grid-template-rows: 687px auto 60px;
+    max-width: 768px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    grid-template-rows: 393px auto 60px;
+    max-width: 1440px;
+  }
+}
+
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.hero__image-wrapper::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $blue-overlay;
+  display: block;
+  position: absolute;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero__content {
+  grid-column: 1 / -1;
+  grid-row: 2/ 3;
+  z-index: 2;
+  max-width: 290px;
+  margin: auto;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    max-width: 659px;
+    margin-left: 45px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    max-width: 968px;
+    margin-left: 100px;
+  }
+}
+
+.hero__title-wrapper {
+  background-color: $color-light;
+  border-radius: 0 16px 16px 0;
+  padding: 20px 15px 16px 14px;
+
+  @media (min-width: $tablet-min-width) {
+    padding: 30px 40px 24px;
+    border-radius: 0 30px 30px 0;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    padding: 40px 50px 30px;
+  }
+}
+
+.hero__title {
+  color: $color-primary;
+}
+
+.hero__content-wrapper {
+  @include flex-box($align-items: flex-start, $justify-content: flex-start);
+
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    flex-direction: row;
+    max-width: 593px;
+    gap: 50px;
+    background: $color-light;
+    border-radius: 0 0 30px 30px;
+  }
+
+  &::before {
+    @media (min-width: $tablet-min-width) {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-color: $color-light;
+      mask-image:
+        linear-gradient(to top, $color-primary, $color-light),
+        radial-gradient(circle 15px at center, $color-light 80%, transparent 81%);
+      mask-size: 12px 12px, 100%;
+      mask-position: top left, center;
+      mask-repeat: no-repeat, repeat;
+      mask-composite: subtract;
+    }
+  }
+}
+
+.hero__text-wrapper {
+  background-color: $color-light;
+  border-radius: 0 0 14px;
+  padding: 0 14px 15px;
+  max-width: 267px;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    padding: 0 20px 35px 40px;
+    max-width: 305px;
+    border-radius: 0 0 0 30px;
+  }
+}
+
+.hero__text-wrapper p {
+  @include font ($size: 16px, $height: 20px);
+
+  margin: 0;
+}
+
+.hero__text-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background-color: $color-light;
+  mask-image:
+    linear-gradient(to top, $color-primary, $color-light),
+    radial-gradient(circle 15px at center, $color-light 80%, transparent 81%);
+  mask-size: 12px 12px, 100%;
+  mask-position: top left, center;
+  mask-repeat: no-repeat, repeat;
+  mask-composite: subtract;
+
+  @media (min-width: $tablet-min-width) {
+    display: none;
+  }
+}
+
+.hero__button-wrapper {
+  background-color: $color-light;
+  border-radius: 0 0 14px 14px;
+  padding: 10px 15px;
+  max-width: 184px;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    max-width: 198px;
+    padding: 0;
+  }
+}
+
+.hero__button-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background-color: $color-light;
+  mask-image:
+    linear-gradient(to top, $color-primary, $color-light),
+    radial-gradient(circle 15px at center, $color-light 80%, transparent 81%);
+  mask-size: 12px 12px, 100%;
+  mask-position: top left, center;
+  mask-repeat: no-repeat, repeat;
+  mask-composite: subtract;
+
+  @media (min-width: $tablet-min-width) {
+    display: none;
+  }
+}
+
+.hero__button {
+  @include flex-box($flex-direction: row);
+  @include font ($size: 12px, $weight: 500);
+
+  letter-spacing: 0.24px;
+
+  gap: 20px;
+  padding: 4px 4px 4px 20px;
+  text-decoration: none;
+  color: $color-primary;
+  cursor: pointer;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 30px;
+    gap: 30px;
+  }
+}
+
+.hero__button-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 44px;
+  background-color: $color-primary;
+  position: relative;
+  transition: background-color, 0.5s;
+
+  @media (min-width: $tablet-min-width) {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.hero__button-icon::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-light;
+  mask-image: url("/__spritemap#sprite-ico-button-arrow-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: auto;
+  transition: background-color 0.5s, mask-image 0.5s;
+}
+
+.hero__swiper .hero__bulit-wrapper.swiper-pagination {
+  @include flex-box($flex-direction: row);
+
+  padding: 10px 12px;
+  top: 35.5%;
+  left: 15px;
+  width: 80px;
+  background: $color-light;
+  height: 28px;
+  border-radius: 12px 12px 0 0;
+
+  @media (min-width: $tablet-min-width) {
+    left: 45px;
+    width: 100px;
+    padding: 14px 16px 26px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.hero__bulit-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  background-color: $color-light;
+  mask-image:
+    linear-gradient(to bottom, $color-primary, $color-light),
+    radial-gradient(circle 15px at center, $color-light 80%, transparent 81%);
+  mask-size: 12px 12px, 100%;
+  mask-position: bottom left, center;
+  mask-repeat: no-repeat, repeat;
+  mask-composite: subtract;
+}
+
+.hero__swiper .hero__bulit-wrapper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border: 2px solid $color-primary;
+  background: transparent;
+  opacity: 1;
+
+  @media (min-width: $tablet-min-width) {
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    border-color: $color-light;
+    background-color: $color-primary;
+    opacity: 0.7;
+  }
+
+  &:focus,
+  &:focus-visible {
+    background-color: $color-primary;
+    outline: none;
+  }
+}
+
+.hero__swiper .hero__bulit-wrapper .swiper-pagination-bullet-active {
+  background: $color-active;
+  border-color: $color-active;
+}

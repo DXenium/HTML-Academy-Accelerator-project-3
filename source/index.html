@@ -6,45 +6,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Сайт фирмы Internship">
   <title>Internship</title>
-  <link rel="preload" href="./fonts/Manrope-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="./fonts/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="./fonts/Manrope-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="module" crossorigin src="./js/main.js"></script>
+  <link rel="preload" href="./fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="module" src="./js/main.js"></script>
   <link rel="stylesheet" href="sass/style.scss">
 </head>
 
 <body class="page__body">
   <main>
-    <section data-test="hero">
+    <section class="hero" data-test="hero">
+      <h1 class="visually-hidden">Сайт фирмы Internship</h1>
       <header class="header">
-        <picture>
-          <source srcset="img/logotype.svg" type="image/svg+xml" width="52" height="52">
-          <img class="header__logo logo" loading="lazy" src="img/logotype.svg" width="52" height="52" alt="Логотип компании Internship">
-        </picture>
-        <div class="menu">
-          <button class="header__button menu__button button" type="button" aria-expanded="false" aria-controls="list">Меню<span class="menu__icon"></span></button>
+        <div class="header__wrapper">
+          <div class="header__image">
+            <picture>
+              <source srcset="img/logotype.svg" type="image/svg+xml" width="52" height="52">
+              <img class="header__logo logo" loading="lazy" src="img/logotype.svg" width="52" height="52" alt="Логотип компании Internship">
+            </picture>
+          </div>
+
+          <div class="menu">
+            <button class="header__button menu__button button" type="button" aria-expanded="false" aria-controls="list">Меню<span class="menu__icon"></span></button>
             <ul class="menu__list" id="list" aria-hidden="true">
               <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">О проекте</a></li>
               <li class="menu__item"><a class="menu__link submenu" href="#" tabindex="-1" aria-expanded="false" aria-controls="sublist1">Программы</a>
-              <ul class="submenu__list" id="sublist1" aria-hidden="true">
-                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Стажировки</a></li>
-                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Волонтёрство</a></li>
-                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Учёба</a></li>
-                <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Религия</a></li>
-              </ul></li>
+                <ul class="submenu__list" id="sublist1" aria-hidden="true">
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Стажировки</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Волонтёрство</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Учёба</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Религия</a></li>
+                </ul>
+              </li>
               <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Как поехать</a></li>
               <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Отзывы</a></li>
               <li class="menu__item"><a class="menu__link submenu" href="#" tabindex="-1" aria-expanded="false" aria-controls="sublist2">Новости</span></a>
                 <ul class="submenu__list" id="sublist2" aria-hidden="true">
-                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Эта неделя</a></li>
-                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Прошлая неделя</a></li>
-                </ul></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Общее</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Волонтёрство</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Стажировки</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">Карьера</a></li>
+                  <li class="submenu__item"><a class="submenu__link" href="#" tabindex="-1">путешествия</a></li>
+                </ul>
+              </li>
               <li class="menu__item"><a class="menu__link" href="#" tabindex="-1">Контакты</a></li>
             </ul>
+          </div>
         </div>
 
       </header>
-      <div></div>
+      <div class="swiper hero__swiper">
+        <div class="swiper-wrapper hero__slider">
+          <div class="swiper-slide hero__item">
+            <div class="hero__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/hero/hero1-slider-desktop@1x.webp 1x, img/hero/hero1-slider-desktop@2x.webp 2x" type="image/webp" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero1-slider-tablet@1x.webp 1x, img/hero/hero1-slider-tablet@2x.webp 2x" type="image/webp" width="768" height="1024">
+                <source media="(min-width: 320px)" srcset="img/hero/hero1-slider-mobile@1x.webp 1x, img/hero/hero1-slider-mobile@2x.webp 2x" type="image/webp" width="320" height="568">
+                <source media="(min-width: 1440px)" srcset="img/hero/hero1-slider-desktop@1x.jpg 1x, img/hero/hero1-slider-desktop@2x.jpg 2x" type="image/jpg" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero1-slider-tablet@1x.jpg 1x, img/hero/hero1-slider-tablet@2x.jpg 2x" type="image/jpg" width="768" height="1024">
+                <source media="(min-width: 7320px)" srcset="img/hero/hero1-slider-mobile@1x.jpg 1x, img/hero/hero1-slider-mobile@2x.jpg 2x" type="image/jpg" width="320" height="568">
+                <img class="hero__image" loading="lazy" src="img/hero/hero1-slider-mobile@1x.jpg" srcset="img/hero/hero1-slider-mobile@2x.jpg 2x" width="320" height="568" alt="Изображение девушки студентки">
+              </picture>
+            </div>
+            <div class="hero__content">
+              <div class="hero__title-wrapper">
+                <h2 class="hero__title heading-h1">Глобальный профессиональный опыт обучения за рубежом</h2>
+              </div>
+              <div class="hero__content-wrapper">
+                <div class="hero__text-wrapper">
+                  <p>Погрузитесь в академическую программу, проходя практику в разных городах, ощущая настоящий студенческий стиль жизни!</p>
+                </div>
+                <div class="hero__button-wrapper"><a class="hero__button button" href="#">Подробнее<span class="hero__button-icon"></span></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide hero__item">
+            <div class="hero__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/hero/hero2-slider-desktop@1x.webp 1x, img/hero/hero2-slider-desktop@2x.webp 2x" type="image/webp" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero2-slider-tablet@1x.webp 1x, img/hero/hero2-slider-tablet@2x.webp 2x" type="image/webp" width="768" height="1024">
+                <source media="(min-width: 320px)" srcset="img/hero/hero2-slider-mobile@1x.webp 1x, img/hero/hero2-slider-mobile@2x.webp 2x" type="image/webp" width="320" height="568">
+                <source media="(min-width: 1440px)" srcset="img/hero/hero2-slider-desktop@1x.jpg 1x, img/hero/hero2-slider-desktop@2x.jpg 2x" type="image/jpg" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero2-slider-tablet@1x.jpg 1x, img/hero/hero2-slider-tablet@2x.jpg 2x" type="image/jpg" width="768" height="1024">
+                <img class="hero__image" loading="lazy" src="img/hero/hero2-slider-mobile@1x.jpg" srcset="img/hero/hero2-slider-mobile@2x.jpg 2x" width="320" height="568" alt="Изображение ребят на стражировке">
+              </picture>
+            </div>
+            <div class="hero__content">
+              <div class="hero__title-wrapper">
+                <h2 class="hero__title heading-h1">Программы стажировок в крупнейших компаниях мира</h2>
+              </div>
+              <div class="hero__text-wrapper">
+                <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
+              </div>
+              <div class="hero__button-wrapper"><a class="hero__button button" href="#">Подробнее<span class="hero__button-icon"></span></span></a></div>
+            </div>
+          </div>
+          <div class="swiper-slide hero__item">
+            <div class="hero__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/hero/hero3-slider-desktop@1x.webp 1x, img/hero/hero3-slider-desktop@2x.webp 2x" type="image/webp" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero3-slider-tablet@1x.webp 1x, img/hero/hero3-slider-tablet@2x.webp 2x" type="image/webp" width="768" height="1024">
+                <source media="(min-width: 320px)" srcset="img/hero/hero3-slider-mobile@1x.webp 1x, img/hero/hero3-slider-mobile@2x.webp 2x" type="image/webp" width="320" height="568">
+                <source media="(min-width: 1440px)" srcset="img/hero/hero3-slider-desktop@1x.jpg 1x, img/hero/hero3-slider-desktop@2x.jpg 2x" type="image/jpg" width="1440" height="800">
+                <source media="(min-width: 768px)" srcset="img/hero/hero3-slider-tablet@1x.jpg 1x, img/hero/hero3-slider-tablet@2x.jpg 2x" type="image/jpg" width="768" height="1024">
+                <img class="hero__image" loading="lazy" src="img/hero/hero3-slider-mobile@1x.jpg" srcset="img/hero/hero3-slider-mobile@2x.jpg 2x" width="320" height="568" alt="Изображение волонтеров">
+              </picture>
+            </div>
+            <div class="hero__content">
+              <div class="hero__title-wrapper">
+                <h2 class="hero__title heading-h1">Волонтёрские программы – внесите свой вклад в общество</h2>
+              </div>
+              <div class="hero__text-wrapper">
+                <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
+              </div>
+              <div class="hero__button-wrapper"><a class="hero__button button" href="#">Подробнее<span class="hero__button-icon"></span></span></a></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination hero__bulit-wrapper"></div>
+
+      </div>
+      </div>
     </section>
   </main>
   <footer></footer>
