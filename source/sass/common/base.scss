@@ -3,6 +3,8 @@
 .heading-h1 {
   @include font ($size: 22px, $height: 26px);
 
+  margin: 0;
+
   @media (min-width: $tablet-min-width) {
     font-size: 36px;
     line-height: 44px;

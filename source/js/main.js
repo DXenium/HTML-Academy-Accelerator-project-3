@@ -5,3 +5,4 @@
 
 
 import './menu';
+import './hero';
