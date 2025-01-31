@@ -23,6 +23,7 @@
   height: 52px;
   position: relative;
   z-index: 5;
+  padding-top: 1px;
 
   @media (min-width: $tablet-min-width) {
     padding-top: 2px;

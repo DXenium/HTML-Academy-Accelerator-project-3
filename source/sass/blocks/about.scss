@@ -1,0 +1,287 @@
+.about {
+  @include flex-box($align-items: flex-start, $justify-content: flex-start);
+
+  gap: 40px;
+
+  width: $mobile-min-width;
+  margin: auto;
+  padding: 50px 15px;
+  background-color: $color-beige;
+
+  @media (min-width: $tablet-min-width) {
+    width: $tablet-min-width;
+    padding: 50px 45px;
+    gap: 60px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    width: $tablet-max-width;
+    padding: 70px 100px;
+  }
+}
+
+.about__content-wrapper {
+  @media (min-width: $tablet-max-width) {
+    @include flex-box($align-items: flex-start, $justify-content: flex-start, $flex-direction: row);
+
+    gap: 35px;
+  }
+}
+
+.about__content {
+  margin-bottom: 30px;
+
+  @media (min-width: $tablet-max-width) {
+    flex-basis: 57%;
+  }
+}
+
+.about__content p {
+  @include font ($size: 16px, $height: 22px);
+
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+.about__title {
+  color: $color-primary;
+  margin: 0;
+  margin-bottom: 15px;
+  padding-left: 1px;
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: 30px;
+    padding: 0;
+  }
+}
+
+.about__description {
+  @media (min-width: $tablet-max-width) {
+    flex-basis: 40%;
+  }
+}
+
+.about__description h3 {
+  @include font ($size: 18px, $height: 22px);
+
+  color: $color-primary;
+  margin: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+.about__description p {
+  @include font ($size: 14px, $height: 20px);
+
+  margin: 0;
+  padding-bottom: 10px;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 500px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    line-height: 26px;
+  }
+
+  &:last-of-type {
+    padding-bottom: 30px;
+
+    @media (min-width: $tablet-min-width) {
+      padding-bottom: 40px;
+    }
+
+    @media (min-width: $tablet-max-width) {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.about__button {
+  @include flex-box($flex-direction: row);
+  @include font ($size: 12px, $weight: 500);
+
+  gap: 20px;
+  padding: 4px 4px 4px 20px;
+  text-decoration: none;
+  background-color: transparent;
+  color: $color-primary;
+  cursor: pointer;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 30px;
+    gap: 30px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    padding: 4px 5px 4px 30px;
+  }
+}
+
+.about__button-ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 44px;
+  background-color: $color-primary;
+  position: relative;
+  transition: background-color, 0.5s;
+
+  @media (min-width: $tablet-min-width) {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.about__button-ico::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-light;
+  mask-image: url("/__spritemap#sprite-ico-button-arrow-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: auto;
+  transition: background-color 0.5s, mask-image 0.5s;
+}
+
+.about__list {
+  @include list-reset;
+  @include flex-box($align-items: flex-start, $justify-content: flex-start);
+
+  gap: 22px;
+  border-radius: 20px;
+  padding: 42px 20px 40px;
+  width: 290px;
+  background-color: $color-primary;
+  color: $color-light;
+
+  @media (min-width: $tablet-min-width) {
+    width: 678px;
+    padding: 72px 50px 50px 70px;
+    flex-direction: row;
+    gap: 54px 52px;
+    align-items: normal;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    width: 1240px;
+    padding: 72px 100px 50px 120px;
+  }
+}
+
+.about__list li {
+  padding: 15px 20px;
+  border: 1px solid $color-beige;
+  border-radius: 16px;
+  width: 250px;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    width: 253px;
+    padding-right: 19px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    @include flex-box($align-items: center, $justify-content: flex-start, $flex-direction: row);
+
+    width: 484px;
+    padding: 30px 40px;
+  }
+}
+
+.about__list li::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  border-radius: 30px;
+  background-color: $color-primary;
+  display: block;
+  position: absolute;
+  top: -21px;
+  left: -21px;
+}
+
+.about__list li::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  mask-image: url("/__spritemap#sprite-ico-star-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: auto;
+  display: block;
+  position: absolute;
+  top: -13px;
+  left: -11px;
+  background-color: $color-light;
+}
+
+.about__list h4 {
+  @include font ($size: 16px, $height: 20px);
+
+  text-transform: uppercase;
+  letter-spacing: 0.16px;
+  margin: 0;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-min-width) {
+    @include font ($size: 20px, $height: 22px);
+
+    letter-spacing: 0.2px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    @include font ($size: 26px, $height: 30px);
+
+    flex-basis: 50%;
+    margin: 0;
+    letter-spacing: 0.26px;
+  }
+}
+
+.about__list p {
+  @include font ($size: 14px, $height: 20px, $weight: 300);
+
+  margin: 0;
+  color: $color-beige;
+
+  @media (min-width: $tablet-min-width) {
+    @include font ($size: 16px, $height: 20px, $weight: 300);
+
+    color: $color-beige;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    flex-basis: 50%;
+  }
+}
