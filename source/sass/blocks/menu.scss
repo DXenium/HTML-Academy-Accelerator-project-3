@@ -33,13 +33,13 @@
 .menu__icon::before {
   content: "";
   width: 18px;
-  height: 20px;
+  height: 8px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: $color-light;
-  mask-image: url("/__spritemap#sprite-ico-menu-view");
+  mask-image: url("/__spritemap#sprite-ico-burger-view");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: auto;

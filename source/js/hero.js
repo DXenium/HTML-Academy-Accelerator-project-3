@@ -24,6 +24,18 @@ function updateBulletPosition() {
   }
 }
 
+let isUpdating = false;
+
+function throttledUpdateBulletPosition() {
+  if (!isUpdating) {
+    isUpdating = true;
+    requestAnimationFrame(() => {
+      updateBulletPosition();
+      isUpdating = false;
+    });
+  }
+}
+
 // Инициализация Swiper
 const heroSlider = new Swiper('.hero__swiper', {
   modules: [Pagination],
@@ -54,20 +66,20 @@ const heroSlider = new Swiper('.hero__swiper', {
   on: {
     init: function () {
       // Обновляем позицию при инициализации
-      updateBulletPosition();
+      throttledUpdateBulletPosition();
     },
     slideChange: function () {
       // Обновляем позицию при смене слайда
-      updateBulletPosition();
+      throttledUpdateBulletPosition();
     },
     touchMove: function () {
       // Обновляем позицию во время свайпа
-      updateBulletPosition();
+      throttledUpdateBulletPosition();
     }
   }
 });
 
 // Обновляем позицию при изменении размера окна
 window.addEventListener('resize', () => {
-  updateBulletPosition();
+  throttledUpdateBulletPosition();
 });

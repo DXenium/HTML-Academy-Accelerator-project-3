@@ -2,7 +2,7 @@
   @include font ($size: 14px, $weight: 500);
 
   text-transform: uppercase;
-  letter-spacing: 0.28px;
+  letter-spacing: 0.24px;
   color: $color-primary;
   cursor: pointer;
   border: 1px solid $color-primary;
@@ -13,6 +13,7 @@
   @media (min-width: $tablet-min-width) {
     font-size: 14px;
     line-height: 14px;
+    letter-spacing: 0.28px;
   }
 }
 
