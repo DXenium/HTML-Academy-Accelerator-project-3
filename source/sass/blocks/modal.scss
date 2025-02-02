@@ -1,5 +1,6 @@
 
 .modal__container {
+  display: none;
   width: 290px;
   padding: 40px 15px;
   margin: auto;
@@ -26,10 +27,30 @@
   position: absolute;
   right: 32px;
   top: 32px;
+  transition: opacity 0.5;
+  border-radius: 2px;
 
   @media (min-width: $tablet-min-width) {
     width: 20px;
     height: 20px;
+  }
+
+  &:hover {
+    opacity: 0.3;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 1px solid $color-text;
+  }
+
+  &:active {
+    outline: 1px solid $color-primary;
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 0.2;
   }
 }
 
@@ -100,6 +121,7 @@
   }
 }
 
+
 .form__field-check {
   @include flex-box($align-items: center, $justify-content: flex-start, $flex-direction: row);
 
@@ -112,6 +134,7 @@
   @include font ($size: 14px);
 
   opacity: 0.8;
+  transition: opacity 0.5s;
 
   @media (min-width: $tablet-min-width) {
     line-height: 20px;
@@ -122,18 +145,44 @@
   }
 }
 
-.modal__input,
-.modal__select {
+.modal__input {
+  @include font ($size: 14px, $height: 18px);
+
   border: 1px solid #c8c8c8;
   border-radius: 8px;
   min-height: 44px;
   width: 100%;
+  padding: 15px 25px;
+  transition: background-color 0.5s;
+}
+
+.modal__select {
+  @include font ($size: 14px);
+
+  background-color: #ffffff;
+  border: 1px solid #c8c8c8;
+  background-image: url("/__spritemap#sprite-ico-select-arrow-view");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px 9px;
+  appearance: none;
+  border-radius: 8px;
+  min-height: 44px;
+  width: 100%;
+  padding: 15px 25px;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.modal__option {
+  @include font ($size: 14px);
 }
 
 .modal__check-label {
   @include font ($size: 12px, $height: 14px);
 
   opacity: 0.9;
+  padding-left: 30px;
 
   @media (min-width: $tablet-min-width) {
     line-height: 12px;
@@ -212,12 +261,61 @@
   height: 20px;
   border-radius: 2px;
   background-color: $color-primary;
+  transition: opacity 0.5s;
 
   @media (min-width: $tablet-min-width) {
-    top: -2px;
+    top: -3px;
   }
 }
 
-.modal__check-label:hover .modal__checkbox-mark {
+.modal__check-label:hover + .modal__checkbox-mark {
   opacity: 0.7;
+}
+
+.modal__checkbox:focus + .modal__checkbox-mark,
+.modal__checkbox:focus-visible + .modal__checkbox-mark {
+  outline: 1px solid $color-text;
+}
+
+.modal__checkbox:disabled + .modal__checkbox-mark {
+  opacity: 0.2;
+  cursor: none;
+}
+
+.modal__checkbox[type="checkbox"]:checked + .modal__checkbox-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  mask-image: url("/__spritemap#sprite-ico-check-view");
+  mask-repeat: no-repeat;
+  background-color: $color-light;
+  mask-size: 10px 10px;
+}
+
+.form__field-container:hover .modal__label {
+  opacity: 1;
+}
+
+.form__field-container:hover .modal__input,
+.form__field-container:active .modal__input,
+.form__field-container:focus .modal__input,
+.form__field-container:focus-visible .modal__input,
+.form__field-container:hover .modal__select,
+.form__field-container:active .modal__select,
+.form__field-container:focus .modal__select,
+.form__field-container:focus-visible .modal__select {
+  border-color: $color-text;
+  outline: none;
+}
+
+.modal__input:disabled {
+  background: rgba(169, 175, 183, 0.2);
+  border: 1px solid rgba(169, 175, 183, 0.5);
+}
+
+.modal__input:disabled .modal__label {
+  opacity: 0.6;
 }

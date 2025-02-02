@@ -176,7 +176,47 @@
         </ul>
       </div>
     </section>
+    <section class="programs" data-test="programs">
+      <h2 class="programs__title heading-h2 ">Программы</h2>
+      <a class="programs__button button" href="#">Все программы<span class="programs__button-icon"></span></span></a>
+      <div class="swiper programs__swiper">
+        <div class="swiper-wrapper programs__swiper-wrapper">
+          <div class="swiper-slide programs__slide programs__slide--first">
+            <div>
+              <h3 class="programs__subtitle heading-h6">Стажировки</h3>
+              <div class="programs__content-wrapper">
+                <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide programs__slide programs__slide--second">
+            <div>
+              <h3 class="programs__subtitle heading-h6">Стажировки</h3>
+              <div class="programs__content-wrapper">
+                <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide programs__slide programs__slide--third">
+            <div>
+              <h3 class="programs__subtitle heading-h6">Стажировки</h3>
+              <div class="programs__content-wrapper">
+                <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+        <div class="programs__slider-button-wrapper">
+          <div class="swiper-button-prev programs__slider-button programs__slider-button--prev"><span class="visually-hidden">назад</span></div>
+          <div class="swiper-button-next programs__slider-button programs__slider-button--next"><span class="visually-hidden">вперёд</span></div>
+        </div>
+      </div>
 
+    </section>
   </main>
   <footer></footer>
   <div class="modal__container">
@@ -200,16 +240,18 @@
         <div class="form__field-container">
           <label class="modal__label" for="city">Выберите город:</label>
           <select class="modal__select" name="city" id="city">
-            <option value="" selected></option>
-            <option value="Samara">Самара</option>
-            <option value="Kalega">Калуга</option>
-            <option value="other">Другой</option>
+            <option class="modal__option" value="" selected></option>
+            <option class="modal__option" value="Samara">Самара</option>
+            <option class="modal__option" value="Kalega">Калуга</option>
+            <option class="modal__option" value="other">Другой</option>
           </select>
         </div>
         <div class="form__field-check">
-          <input class="modal__checkbox visually-hidden" type="checkbox" name="personality" value="1" id="personality" required>
-          <span class="modal__checkbox-mark"></span>
-          <label class="modal__check-label" for="personality">Я согласен на обработку моих персональных данных</label>
+          <label class="modal__check-label" for="personality">
+            <input class="modal__checkbox visually-hidden" type="checkbox" name="personality" value="1" id="personality" required>
+            <span class="modal__checkbox-mark"></span>
+            <span>Я согласен на обработку моих персональных данных</span>
+          </label>
         </div>
         <div class="modal__button-wrapper"><button class="modal__submit-button button" type="submit">Отправить<span class="modal__button-icon"></span></span></button></div>
       </form>
@@ -222,8 +264,7 @@
     <use href="/__spritemap#sprite-user"></use>
   </svg> -->
   <!-- примеры требуемых атрибутов data-test="*" -->
-  <!-- <div data-test="programs">programs</div>
-  <div data-test="grant">grant</div>
+  <!-- <div data-test="grant">grant</div>
   <div data-test="news">news</div>
   <div data-test="FAQ">FAQ</div>
   <div data-test="reviews">reviews</div>
