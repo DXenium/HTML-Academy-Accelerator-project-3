@@ -6,3 +6,5 @@
 
 import './menu';
 import './hero';
+import './popup';
+import './programs';
