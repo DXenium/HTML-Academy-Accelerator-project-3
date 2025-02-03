@@ -7,7 +7,7 @@
   <meta name="description" content="Сайт фирмы Internship">
   <title>Internship</title>
   <link rel="preload" href="./fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/main.js" defer></script>
   <link rel="stylesheet" href="sass/style.scss">
 </head>
 
@@ -182,7 +182,7 @@
       <div class="swiper programs__swiper">
         <div class="swiper-wrapper programs__swiper-wrapper">
           <div class="swiper-slide programs__slide programs__slide--first">
-            <div>
+            <div class="programs__wrapper">
               <h3 class="programs__subtitle heading-h6">Стажировки</h3>
               <div class="programs__content-wrapper">
                 <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
@@ -191,16 +191,25 @@
             </div>
           </div>
           <div class="swiper-slide programs__slide programs__slide--second">
-            <div>
-              <h3 class="programs__subtitle heading-h6">Стажировки</h3>
+            <div class="programs__wrapper">
+              <h3 class="programs__subtitle heading-h6">Волонтёрство</h3>
               <div class="programs__content-wrapper">
-                <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
+                <p>Помогайте другим и развивайте свои лидерские качества</p>
                 <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
               </div>
             </div>
           </div>
           <div class="swiper-slide programs__slide programs__slide--third">
-            <div>
+            <div class="programs__wrapper">
+              <h3 class="programs__subtitle heading-h6">Учёба</h3>
+              <div class="programs__content-wrapper">
+                <p>Получите образование и измените своё будущее.</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide programs__slide programs__slide--first">
+            <div class="programs__wrapper">
               <h3 class="programs__subtitle heading-h6">Стажировки</h3>
               <div class="programs__content-wrapper">
                 <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
@@ -208,14 +217,59 @@
               </div>
             </div>
           </div>
+          <div class="swiper-slide programs__slide programs__slide--second">
+            <div class="programs__wrapper">
+              <h3 class="programs__subtitle heading-h6">Волонтёрство</h3>
+              <div class="programs__content-wrapper">
+                <p>Помогайте другим и развивайте свои лидерские качества</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide programs__slide programs__slide--third">
+            <div class="programs__wrapper">
+              <h3 class="programs__subtitle heading-h6">Учёба</h3>
+              <div class="programs__content-wrapper">
+                <p>Получите образование и измените своё будущее.</p>
+                <a class="programs__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="swiper-scrollbar"></div>
-        <div class="programs__slider-button-wrapper">
-          <div class="swiper-button-prev programs__slider-button programs__slider-button--prev"><span class="visually-hidden">назад</span></div>
-          <div class="swiper-button-next programs__slider-button programs__slider-button--next"><span class="visually-hidden">вперёд</span></div>
+
+      </div>
+      <div class="programs__slider-button-wrapper">
+        <div class="swiper-button-prev programs__slider-button programs__slider-button--prev"><span class="visually-hidden">назад</span></div>
+        <div class="swiper-button-next programs__slider-button programs__slider-button--next"><span class="visually-hidden">вперёд</span></div>
+      </div>
+      <div class="swiper-scrollbar programs__scrollbar"></div>
+
+    </section>
+    <section class="grant" data-test="grant">
+      <div class="grant__content">
+        <h2 class="grant__title heading-h2">Как поехать</h2>
+        <p>Свяжитесь с координатором, чтобы узнать полную информацию. Вы получите актуальные сведения о доступных
+          программах и городах, в которых можете пройти программу.</p>
+        <div class="grant__image-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="./img/grant/grant@1x.webp 1x, ./img/grant/grant@2x.webp 2x" type="image/webp" width="498" height="363">
+            <source media="(min-width: 768px)" srcset="./img/grant/grant-tab@1x.webp 1x, ./img/grant/grant-tab@2x.webp 2x" type="image/webp" width="678" height="375">
+            <source srcset="./img/grant/grant-mob@1x.webp 1x, ./img/grant/grant-mob@2x.webp 2x" type="image/webp" width="290" height="200">
+            <source media="(min-width: 1440px)" srcset="./img/grant/grant@1x.jpg 1x, ./img/grant/grant@2x.jpg 2x" type="image/jpg" width="498" height="363">
+            <source media="(min-width: 768px)" srcset="./img/grant/grant-tab@1x.jpg 1x, ./img/grant/grant-tab@2x.jpg 2x" type="image/jpg" width="678" height="375">
+            <img class="grant__image" loading="lazy" src="./img/grant/grant-mob@1x.jpg" srcset="./img/grant/grant-mob@2x.jpg 2x" width="290" height="200" alt="Указатель дороги">
+          </picture>
         </div>
       </div>
-
+      <div class="grant__need">
+        <h3 class="grant__subtitle heading-h3 ">Чтобы получить грант на обучение, вам нужно:</h3>
+        <ul class="grant__list">
+          <li class="grant__item text-regular">Быть в возрасте от 16 до 30 лет</li>
+          <li class="grant__item text-regular">Иметь оконченное среднее образование</li>
+          <li class="grant__item text-regular">Иметь документально подтверждённое отсутствие судимости и пройти консульскую проверку</li>
+          <li class="grant__item text-regular">За последние 2 года быть не больше 3х месяцев подряд непрерывно в одной стране</li>
+        </ul>
+      </div>
     </section>
   </main>
   <footer></footer>
@@ -264,14 +318,13 @@
     <use href="/__spritemap#sprite-user"></use>
   </svg> -->
   <!-- примеры требуемых атрибутов data-test="*" -->
-  <!-- <div data-test="grant">grant</div>
-  <div data-test="news">news</div>
+  <!-- <div data-test="news">news</div>
   <div data-test="FAQ">FAQ</div>
   <div data-test="reviews">reviews</div>
   <div data-test="contacts">contacts</div>
   <div data-test="form">form</div>
   <div data-test="footer">footer</div>
-  <script type="module" src="js/main.js"></script> -->
+  <script type="module" src="js/main.js"></script>  -->
 </body>
 
 </html>

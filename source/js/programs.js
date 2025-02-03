@@ -23,35 +23,43 @@ const swiper = new Swiper('.programs__swiper', {
     el: '.swiper-scrollbar',
     draggable: true,
   },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.programs__slider-button--next',
+    prevEl: '.programs__slider-button--prev',
+  },
+
   loop: false,
   touchRatio: 1,
   touchAngle: 45,
-  slidesPerView: 1,
-  slidesPerGroup: 1,
+  slidesPerView: 3, // Количество видимых слайдов
+  slidesPerGroup: 1, // Количество слайдов для прокрутки
   initialSlide: 0,
   spaceBetween: 30,
 
-  breakpoints: {
+  _breakpoints: {
     320: {
       slidesPerView: 1,
       grabCursor: true,
       simulateTouch: true,
     },
+    768: {
+      slidesPerView: 2.126,
+      grabCursor: true,
+      simulateTouch: true,
+    },
     1440: {
-      slidesPerView: 1,
+      slidesPerView: 3,
       grabCursor: false,
       simulateTouch: false,
+      spaceBetween: 32,
     }
   },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+  get breakpoints() {
+    return this._breakpoints;
   },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
+  set breakpoints(value) {
+    this._breakpoints = value;
   },
 });
+
