@@ -7,7 +7,7 @@
   <meta name="description" content="Сайт фирмы Internship">
   <title>Internship</title>
   <link rel="preload" href="./fonts/Manrope.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <script type="module" src="./js/main.js" defer></script>
+  <!-- <script type="module" src="./js/main.js" defer></script> -->
   <link rel="stylesheet" href="sass/style.scss">
 </head>
 
@@ -63,7 +63,7 @@
                 <source media="(min-width: 320px)" srcset="img/hero/hero1-slider-mobile@1x.webp 1x, img/hero/hero1-slider-mobile@2x.webp 2x" type="image/webp" width="320" height="568">
                 <source media="(min-width: 1440px)" srcset="img/hero/hero1-slider-desktop@1x.jpg 1x, img/hero/hero1-slider-desktop@2x.jpg 2x" type="image/jpg" width="1440" height="800">
                 <source media="(min-width: 768px)" srcset="img/hero/hero1-slider-tablet@1x.jpg 1x, img/hero/hero1-slider-tablet@2x.jpg 2x" type="image/jpg" width="768" height="1024">
-                <source media="(min-width: 7320px)" srcset="img/hero/hero1-slider-mobile@1x.jpg 1x, img/hero/hero1-slider-mobile@2x.jpg 2x" type="image/jpg" width="320" height="568">
+                <source media="(min-width: 320px)" srcset="img/hero/hero1-slider-mobile@1x.jpg 1x, img/hero/hero1-slider-mobile@2x.jpg 2x" type="image/jpg" width="320" height="568">
                 <img class="hero__image" loading="lazy" src="img/hero/hero1-slider-mobile@1x.jpg" srcset="img/hero/hero1-slider-mobile@2x.jpg 2x" width="320" height="568" alt="Изображение девушки студентки">
               </picture>
             </div>
@@ -271,6 +271,109 @@
         </ul>
       </div>
     </section>
+    <section class="news" data-test="news">
+      <h2 class="news__title heading-h2">Новости и материалы</h2>
+      <div class="news__tabs-wrapper">
+        <ul class="news__tabs-list">
+          <li class="news__tab captions news__tab--current">Общее</li>
+          <li class="news__tab captions ">Волонтёрство</li>
+          <li class="news__tab captions ">Стажировки</li>
+          <li class="news__tab captions ">Карьера</li>
+          <li class="news__tab captions ">Путешествия</li>
+        </ul>
+      </div>
+      <div class="swiper news__swiper">
+        <div class="swiper-wrapper news__swiper-wrapper">
+          <div class="swiper-slide news__slide">
+            <div class="news__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/news/news1-desktop@1x.webp 1x, img/news/news1-desktop@2x.webp 2x" type="image/webp" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news1-tablet@1x.webp 1x, img/news/news1-tablet@2x.webp 2x" type="image/webp" width="324" height="350">
+                <source media="(min-width: 320px)" srcset="img/news/news1-mob@1x.webp 1x, img/news/news1-mob@2x.webp 2x" type="image/webp" width="290" height="330">
+                <source media="(min-width: 1440px)" srcset="img/news/news1-desktop@1x.jpg 1x, img/news/news1-desktop@2x.jpg 2x" type="image/jpg" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news1-tablet@1x.jpg 1x, img/news/news1-tablet@2x.jpg 2x" type="image/jpg" width="324" height="350">
+                <source media="(min-width: 320px)" srcset="img/news/news1-mob@1x.jpg 1x, img/news/news1-mob@2x.jpg 2x" type="image/jpg" width="290" height="330">
+                <img class="news__image" loading="lazy" src="img/news/news1-mob@1x.jpg" srcset="img/news/news1-mob@2x.jpg 2x" width="290" height="330" alt="Изображение участников программы стажировки">
+              </picture>
+            </div>
+            <div class="news__slide-content">
+              <time class="news__date" datetime="2023-03-23">23/03/2023</time>
+              <h3 class="news__subtitle heading-h6">Интервью с участницей программы стажировки</h3>
+              <div class="news__detail-wrapper">
+                <p>Саша рассказывает, как попала в программу и как прошла 6-месячная стажировка в ISOFound</p>
+                <a class="news__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide news__slide">
+            <div class="news__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/news/news2-desktop@1x.webp 1x, img/news/news2-desktop@2x.webp 2x" type="image/webp" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news2-tablet@1x.webp 1x, img/news/news2-tablet@2x.webp 2x" type="image/webp" width="324" height="350">
+                <source media="(min-width: 320px)" srcset="img/news/news2-mob@1x.webp 1x, img/news/news2-mob@2x.webp 2x" type="image/webp" width="290" height="240">
+                <source media="(min-width: 1440px)" srcset="img/news/news2-desktop@1x.jpg 1x, img/news/news2-desktop@2x.jpg 2x" type="image/jpg" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news2-tablet@1x.jpg 1x, img/news/news2-tablet@2x.jpg 2x" type="image/jpg" width="324" height="350">
+                <source media="(min-width: 320px)" srcset="img/news/news2-mob@1x.jpg 1x, img/news/news2-mob@2x.jpg 2x" type="image/jpg" width="290" height="240">
+                <img class="news__image" loading="lazy" src="img/news/news2-mob@1x.jpg" srcset="img/news/news2-mob@2x.jpg 2x" width="290" height="240" alt="Изображение города на пляже">
+              </picture>
+            </div>
+            <div class="news__slide-content">
+              <time class="news__date" datetime="2023-03-20">20/03/2023</time>
+              <h3 class="news__subtitle heading-h6">Путешествуем по миру</h3>
+              <div class="news__detail-wrapper">
+                <p>Какие места посещают наши студенты весной</p>
+                <a class="news__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide news__slide">
+            <div class="news__image-wrapper">
+              <picture>
+                <source media="(min-width: 1440px)" srcset="img/news/news3-desktop@1x.webp 1x, img/news/news3-desktop@2x.webp 2x" type="image/webp" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news3-tablet@1x.webp 1x, img/news/news3-tablet@2x.webp 2x" type="image/webp" width="324" height="350">
+                <source media="(min-width: 1440px)" srcset="img/news/news3-desktop@1x.jpg 1x, img/news/news3-desktop@2x.jpg 2x" type="image/jpg" width="604" height="400">
+                <source media="(min-width: 768px)" srcset="img/news/news3-tablet@1x.jpg 1x, img/news/news3-tablet@2x.jpg 2x" type="image/jpg" width="324" height="350">
+                <img class="news__image" loading="lazy" src="img/news/news3-tablet@1x.jpg" srcset="img/news/news3-tablet@2x.jpg 2x" width="290" height="240" alt="Изображение волонтёра">
+              </picture>
+            </div>
+            <div class="news__slide-content">
+              <time class="news__date" datetime="2023-03-17">17/03/2023</time>
+              <h3 class="news__subtitle heading-h6">Новая программа волонтёрства</h3>
+              <div class="news__detail-wrapper">
+                <p>Программа помощи детям длительностью 4 месяца</p>
+                <a class="news__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide news__slide">
+            <div class="news__image-wrapper">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/news/news4-tablet@1x.webp 1x, img/news/news4-tablet@2x.webp 2x" type="image/webp" width="324" height="350">
+                <source media="(min-width: 768px)" srcset="img/news/news4-tablet@1x.jpg 1x, img/news/news4-tablet@2x.jpg 2x" type="image/jpg" width="324" height="350">
+                <img class="news__image" loading="lazy" src="img/news/news4-tablet@1x.jpg" srcset="img/news/news4-tablet@2x.jpg 2x" width="290" height="240" alt="Изображение волонтёра">
+              </picture>
+            </div>
+            <div class="news__slide-content">
+              <time class="news__date" datetime="2023-03-10">10/03/2023</time>
+              <h3 class="news__subtitle heading-h6">Построй свою карьеру</h3>
+              <div class="news__detail-wrapper">
+                <p>Ведущие компании готовы трудоустроить выпускников стажировки</p>
+                <a class="news__detail" href="#"><span class="visually-hidden">подробнее</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="news__custom-pagination"></div>
+      <div class="news__slider-button-wrapper">
+        <div class="swiper-button-prev news__slider-button news__slider-button--prev"><span class="visually-hidden">назад</span></div>
+        <div class="swiper-button-next news__slider-button news__slider-button--next"><span class="visually-hidden">вперёд</span></div>
+      </div>
+    </section>
   </main>
   <footer></footer>
   <div class="modal__container">
@@ -318,13 +421,12 @@
     <use href="/__spritemap#sprite-user"></use>
   </svg> -->
   <!-- примеры требуемых атрибутов data-test="*" -->
-  <!-- <div data-test="news">news</div>
-  <div data-test="FAQ">FAQ</div>
+  <!-- <div data-test="FAQ">FAQ</div>
   <div data-test="reviews">reviews</div>
   <div data-test="contacts">contacts</div>
   <div data-test="form">form</div>
-  <div data-test="footer">footer</div>
-  <script type="module" src="js/main.js"></script>  -->
+  <div data-test="footer">footer</div> -->
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

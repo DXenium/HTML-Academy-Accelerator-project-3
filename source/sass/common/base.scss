@@ -62,7 +62,7 @@
   @include font ($size: 16px, $height: 20px);
 
   text-transform: uppercase;
-  letter-spacing: 1%;
+  letter-spacing: 0.01em;
 
   @media (min-width: $tablet-min-width) {
     font-size: 20px;
@@ -160,9 +160,9 @@
 // Captions //
 
 .captions {
-  @include font ($size: 12px, $height: 12px);
+  @include font ($size: 12px, $height: 12px, $weight: 500);
 
   text-transform: uppercase;
-  letter-spacing: 1%;
+  letter-spacing: 0.24px;
   color: $color-primary;
 }
