@@ -1,0 +1,32 @@
+.questions {
+  width: $mobile-min-width;
+  margin: auto;
+  padding: 50px 15px;
+  background-color: $color-beige;
+  color: $color-primary;
+  text-align: center;
+
+  @media (min-width: $tablet-min-width) {
+    width: $tablet-min-width;
+    padding: 50px 45px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    width: $tablet-max-width;
+    padding: 60px 100px;
+  }
+}
+
+.questions__title {
+  margin: 0;
+  margin-bottom: 30px;
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    margin-top: 11px;
+    margin-bottom: 71px;
+  }
+}
