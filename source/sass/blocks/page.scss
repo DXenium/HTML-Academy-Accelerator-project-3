@@ -1,16 +1,15 @@
 .page {
-    height: 100%;
-    min-width: 320px;
-    scroll-behavior: smooth;
-  }
-  
-  .page__body {
-    font-family: $primary-font;
-    color: $color-text;
-    font-size: 16px;
-    line-height: 26px;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-  }
-  
+  height: 100%;
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  font-family: $primary-font;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 26px;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
