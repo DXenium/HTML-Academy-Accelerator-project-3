@@ -9,3 +9,4 @@ import './hero';
 import './popup';
 import './programs';
 import './news';
+import './reviews';
