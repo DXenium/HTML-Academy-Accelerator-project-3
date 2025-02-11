@@ -523,6 +523,38 @@
       <div class="swiper-scrollbar reviews__scrollbar"></div>
 
     </section>
+
+    <section class="contacts" data-test="contacts">
+      <div class="contacts__information-wrapper">
+        <h2 class="contacts__title heading-h2">Контакты</h2>
+        <div class="contacts__wrapper">
+          <div class="contacts__detail-container">
+            <p class="contacts__subtitle">Центральный офис</p>
+            <p class="contacts__text">г. Новосибирск, ул. Щетинкина 68, культурный центр</p>
+          </div>
+          <div class="contacts__detail-container">
+            <p class="contacts__subtitle">Телефон</p>
+            <a class="contacts__text contacts__link" href="tel:+796387687676">+7 963 876 876 76</a>
+          </div>
+          <div class="contacts__detail-container">
+            <p class="contacts__subtitle">Email</p>
+            <a class="contacts__text contacts__link" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+          </div>
+        </div>
+      </div>
+      <hr class="contacts__divider">
+      <div>
+        <picture>
+          <source media="(min-width: 1440px)" srcset="img/map/map@1x.webp 1x, img/map/map@2x.webp 2x" type="image/webp" width="1240" height="486">
+          <source media="(min-width: 768px)" srcset="img/map/map-tablet@1x.webp 1x, img/map/map-tablet@2x.webp 2x" type="image/webp" width="678" height="500">
+          <source srcset="img/map/map-mobile@1x.webp 1x, img/map/map-mobile@2x.webp 2x" type="image/webp" width="290" height="240">
+          <source media="(min-width: 1440px)" srcset="img/map/map@1x.png 1x, img/map/map2x.png 2x" type="image/png" width="1240" height="486">
+          <source media="(min-width: 768px)" srcset="img/map/map-tablet@1x.png 1x, img/map/map-tablet@2x.png 2x" type="image/jpg" width="678" height="500">
+          <img class="contacts__image" loading="lazy" src="img/map/map-mobile" srcset="img/map/map-mobile@2x.png 2x" width="290" height="240" alt="Карта расположения компании">
+        </picture>
+      </div>
+
+    </section>
   </main>
   <footer></footer>
   <div class="modal__container">
@@ -570,7 +602,6 @@
     <use href="/__spritemap#sprite-user"></use>
   </svg> -->
   <!-- примеры требуемых атрибутов data-test="*"
-  <div data-test="contacts">contacts</div>
   <div data-test="form">form</div>
   <div data-test="footer">footer</div> -->
   <script type="module" src="js/main.js"></script>
