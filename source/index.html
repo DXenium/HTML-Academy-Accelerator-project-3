@@ -553,6 +553,46 @@
           <img class="contacts__image" loading="lazy" src="img/map/map-mobile" srcset="img/map/map-mobile@2x.png 2x" width="290" height="240" alt="Карта расположения компании">
         </picture>
       </div>
+    </section>
+    <section class="main-form" data-test="form">
+      <div class="main-form__wrapper">
+        <div class="main-form__container">
+          <h2 class="main-form__title heading-h3">Напишите нам</h2>
+          <p class="main-form__text text-regular">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+          <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="form__field-container">
+              <label class="form__label" for="name">Имя</label>
+              <input class="form__input" type="text" name="free-email" id="name" required>
+            </div>
+            <div class="form__field-container">
+              <label class="form__label" for="phone">Телефон</label>
+              <input class="form__input" type="tel" name="free-phone" id="phone" pattern="[^A-Za-zА-Яа-яЁё]+$" title="Без букв">
+            </div>
+            <div class="form__field-container">
+              <label class="form__label" for="message">Ваше сообщение</label>
+              <textarea class="form__textarea" name="message" id="message" cols="10" rows="3"></textarea>
+            </div>
+            <div class="form__field-container">
+              <label class="form__label" for="city">Выберите город:</label>
+              <select class="form__select" name="city" id="city">
+                <option class="form__option" value="" selected></option>
+                <option class="form__option" value="Samara">Самара</option>
+                <option class="form__option" value="Kalega">Калуга</option>
+                <option class="form__option" value="other">Другой</option>
+              </select>
+            </div>
+            <div class="form__field-check">
+              <label class="form__check-label" for="personality">
+                <input class="form__checkbox visually-hidden" type="checkbox" name="personality" value="1" id="personality" required>
+                <span class="form__checkbox-mark"></span>
+                <span>Я согласен на обработку моих персональных <br>данных</span>
+              </label>
+            </div>
+            <div class="form__button-wrapper"><button class="form__submit-button button" type="submit">Отправить<span class="form__button-icon"></span></span></button></div>
+          </form>
+        </div>
+        <div class="main-form__picture"></div>
+      </div>
 
     </section>
   </main>
@@ -568,30 +608,30 @@
       </div>
       <form class="modal__form form" action="https://echo.htmlacademy.ru/" method="post">
         <div class="form__field-container">
-          <label class="modal__label" for="name">Имя</label>
-          <input class="modal__input" type="text" name="free-email" id="name" required>
+          <label class="modal__label form__label" for="modal-name">Имя</label>
+          <input class="modal__input form__input" type="text" name="free-email" id="modal-name" required>
         </div>
         <div class="form__field-container">
-          <label class="modal__label" for="phone">Телефон</label>
-          <input class="modal__input" type="tel" name="free-phone" id="phone" pattern="[^A-Za-zА-Яа-яЁё]+$" title="Без букв">
+          <label class="modal__label form__label" for="modal-phone">Телефон</label>
+          <input class="modal__input form__input" type="tel" name="free-phone" id="modal-phone" pattern="[^A-Za-zА-Яа-яЁё]+$" title="Без букв">
         </div>
         <div class="form__field-container">
-          <label class="modal__label" for="city">Выберите город:</label>
-          <select class="modal__select" name="city" id="city">
-            <option class="modal__option" value="" selected></option>
-            <option class="modal__option" value="Samara">Самара</option>
-            <option class="modal__option" value="Kalega">Калуга</option>
-            <option class="modal__option" value="other">Другой</option>
+          <label class="modal__label form__label" for="modal-city">Выберите город:</label>
+          <select class="modal__select form__select" name="city" id="modal-city">
+            <option class="modal__option form__option" value="" selected></option>
+            <option class="modal__option form__option" value="Samara">Самара</option>
+            <option class="modal__option form__option" value="Kalega">Калуга</option>
+            <option class="modal__option form__option" value="other">Другой</option>
           </select>
         </div>
         <div class="form__field-check">
-          <label class="modal__check-label" for="personality">
-            <input class="modal__checkbox visually-hidden" type="checkbox" name="personality" value="1" id="personality" required>
-            <span class="modal__checkbox-mark"></span>
+          <label class="modal__check-label form__check-label" for="modal-personality">
+            <input class="modal__checkbox visually-hidden" type="checkbox" name="personality" value="1" id="modal-personality" required>
+            <span class="modal__checkbox-mark form__checkbox-mark"></span>
             <span>Я согласен на обработку моих персональных данных</span>
           </label>
         </div>
-        <div class="modal__button-wrapper"><button class="modal__submit-button button" type="submit">Отправить<span class="modal__button-icon"></span></span></button></div>
+        <div class="modal__button-wrapper form__button-wrapper"><button class="modal__submit-button form__submit-button button" type="submit">Отправить<span class="modal__button-icon form__button-icon"></span></span></button></div>
       </form>
     </section>
   </div>
@@ -602,7 +642,6 @@
     <use href="/__spritemap#sprite-user"></use>
   </svg> -->
   <!-- примеры требуемых атрибутов data-test="*"
-  <div data-test="form">form</div>
   <div data-test="footer">footer</div> -->
   <script type="module" src="js/main.js"></script>
 </body>
