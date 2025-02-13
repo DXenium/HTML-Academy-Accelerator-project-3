@@ -1,0 +1,132 @@
+.footer__wrapper {
+  @include flex-box($align-items: center, $justify-content: flex-start);
+
+  gap: 14px;
+
+  width: $mobile-min-width;
+  margin: auto;
+  padding: 40px 15px;
+  background-color: $color-beige;
+
+  @media (min-width: $tablet-min-width) {
+    width: $tablet-min-width;
+    padding: 40px 45px;
+    gap: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    width: $tablet-max-width;
+    padding: 60px 100px;
+    gap: 25px 300px;
+  }
+}
+
+.footer__container {
+  @include flex-box($align-items: center, $justify-content: flex-start);
+
+  gap: 16px;
+
+  @media (min-width: $tablet-min-width) {
+    flex-direction: row;
+    gap: 98px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    gap: 52px;
+  }
+}
+
+.footer__logo {
+  display: block;
+}
+
+.footer__list {
+  @include list-reset;
+  @include flex-box($align-items: center, $justify-content: center, $flex-direction: row);
+
+  gap: 14px 30px;
+  margin-bottom: 5px;
+
+  @media (min-width: $tablet-min-width) {
+    gap: 15px;
+    margin: 0;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    gap: 30px;
+  }
+}
+
+.footer__link {
+  text-decoration: none;
+  color: $color-text;
+}
+
+.footer__policy {
+  @include flex-box($align-items: center, $justify-content: center, $flex-direction: row);
+
+  gap: 13px;
+
+  @media (min-width: $tablet-min-width) {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    order: 3;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.footer__policy-link {
+  color: $color-text;
+  text-decoration: none;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    order: 1;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $color-text;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+    @media (min-width: $tablet-min-width) {
+      bottom: -3px;
+    }
+  }
+}
+
+.footer__policy-text {
+  opacity: 0.6;
+  margin: 0;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
