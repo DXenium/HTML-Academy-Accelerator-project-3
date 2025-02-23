@@ -495,7 +495,7 @@
 }
 
 
-.news__custom-pagination {
+.swiper-pagination-bullets.swiper-pagination-clickable.news__custom-pagination {
   max-width: 152px;
   left: 50%;
   transform: translateX(-50%);
@@ -517,7 +517,7 @@
   }
 }
 
-.news__custom-pagination .pagination-bullet {
+.news__pagination-button {
   @include font ($size: 14px);
   @include flex-box($flex-direction: row, $align-items: center, $justify-content: center);
 
@@ -543,8 +543,8 @@
     border-color: $color-primary;
   }
 
-  &:focus:not(.pagination-bullet-active),
-  &:focus-visible:not(.pagination-bullet-active) {
+  &:focus:not(.news__pagination-button--active),
+  &:focus-visible:not(.news__pagination-button--active) {
     outline: none;
     opacity: 1;
     border-color: $color-primary;
@@ -559,10 +559,14 @@
   }
 }
 
-.news__custom-pagination .pagination-bullet-active {
+.news__custom-pagination .news__pagination-button--active {
   background-color: $color-primary;
   color: $color-light;
   opacity: 1;
+}
+
+.news__custom-pagination .news__pagination-button--hidden {
+  display: none;
 }
 
 .news__detail:hover.news__detail::before {
