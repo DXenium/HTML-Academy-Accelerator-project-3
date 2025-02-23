@@ -56,6 +56,7 @@
   padding: 4px 4px 4px 30px;
   background-color: transparent;
   min-width: 205px;
+  justify-self: flex-start;
   height: fit-content;
 
   @media (min-width: $tablet-min-width) {
