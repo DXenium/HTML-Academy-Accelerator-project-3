@@ -8,7 +8,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 
 
-const swiper = new Swiper('.programs__swiper', {
+new Swiper('.programs__swiper', {
   modules: [Navigation, Scrollbar],
 
   direction: 'horizontal',
@@ -16,7 +16,6 @@ const swiper = new Swiper('.programs__swiper', {
     prevSlideMessage: 'Предыдущий слайд',
     nextSlideMessage: 'Следующий слайд',
   },
-  // Navigation arrows
   navigation: {
     nextEl: '.programs__slider-button--next',
     prevEl: '.programs__slider-button--prev',
@@ -51,6 +50,31 @@ const swiper = new Swiper('.programs__swiper', {
       simulateTouch: false,
       spaceBetween: 32,
     }
+  },
+  on: {
+    afterInit: function () {
+      checkAndCloneSlides(this);
+    },
+    resize: function () {
+      checkAndCloneSlides(this);
+    }
   }
 });
 
+function checkAndCloneSlides(swiper) {
+  const slides = swiper.slides;
+  const minSlidesRequired = 8; // Минимальное количество слайдов для планшетов и десктопов
+
+  // Проверяем, что ширина экрана больше 768px (планшеты и десктопы)
+  if (window.innerWidth >= 768 && slides.length < minSlidesRequired) {
+    const slidesToClone = minSlidesRequired - slides.length;
+
+    for (let i = 0; i < slidesToClone; i++) {
+      const clone = slides[i % slides.length].cloneNode(true);
+      swiper.wrapperEl.appendChild(clone);
+    }
+
+    // Обновляем Swiper после добавления новых слайдов
+    swiper.update();
+  }
+}

@@ -34,7 +34,7 @@
 
   gap: 20px;
   border: 2px solid $color-primary;
-  border-radius: 16px;
+  border-radius: $medium-border-radius;
   padding: 30px 15px;
 
   @media (min-width: $tablet-min-width) {
@@ -228,8 +228,32 @@
   transform: rotate(180deg);
 }
 
+.reviews__slider-button-wrapper .reviews__slider-button:hover {
+  &::after {
+    background-color: $color-light;
+  }
+}
+
+.reviews__slider-button-wrapper .reviews__slider-button:focus,
+.reviews__slider-button-wrapper .reviews__slider-button:focus-visible {
+  outline-color: $color-text;
+
+  &::after {
+    background-color: $color-text;
+  }
+}
+
+.reviews__slider-button-wrapper .reviews__slider-button:active {
+  &::after {
+    background-color: $color-active;
+  }
+}
+
+
 .reviews .reviews__scrollbar.swiper-scrollbar-horizontal {
   display: none;
+  cursor: pointer;
+  transition: background-color, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     display: block;
@@ -245,6 +269,10 @@
     left: 100px;
     bottom: 70px;
     max-width: 1136px;
+  }
+
+  &:hover {
+    background-color: $color-light;
   }
 }
 

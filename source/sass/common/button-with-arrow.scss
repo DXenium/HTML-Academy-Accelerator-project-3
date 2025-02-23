@@ -1,0 +1,97 @@
+.button-with-arrow {
+  @include flex-box($flex-direction: row);
+  @include font ($size: 12px, $weight: 500);
+
+  text-decoration: none;
+  color: $color-primary;
+  gap: 20px;
+  cursor: pointer;
+  transition: background-color, color, 0.5s;
+
+  @media (min-width: $tablet-min-width) {
+    font-size: 14px;
+    line-height: 14px;
+    gap: 30px;
+    padding-left: 30px;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-light;
+
+    .button-with-arrow-icon {
+      background-color: $color-light;
+    }
+
+    .button-with-arrow-icon::before {
+      background-color: $color-primary;
+      transform: rotate(45deg) translate(-60%, -20%);
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+
+    .button-with-arrow-icon::before {
+      transform: rotate(45deg) translate(-60%, -20%);
+    }
+  }
+
+  &:active {
+    background-color: $color-primary;
+    color: rgba(255, 255, 255, 0.7);
+
+    .button-with-arrow-icon {
+      background-color: $color-light;
+    }
+
+    .button-with-arrow-icon::before {
+      background-color: rgba(49, 109, 194, 0.7);
+      transform: rotate(45deg) translate(-60%, -20%);
+    }
+  }
+
+  &:disabled {
+    border-color: $color-disabled;
+    color: $color-disabled;
+
+    .button-with-arrow-icon {
+      background-color: $color-disabled;
+    }
+
+    .button-with-arrow-icon::before {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.button-with-arrow-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 44px;
+  background-color: $color-primary;
+  position: relative;
+  transition: background-color, 0.5s;
+
+  @media (min-width: $tablet-min-width) {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.button-with-arrow-icon::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-light;
+  mask-image: url("/__spritemap#sprite-ico-button-arrow-view");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: auto;
+  transition: background-color 0.5s, mask-image 0.5s, transform 0.5s;
+}

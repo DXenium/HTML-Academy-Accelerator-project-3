@@ -1,12 +1,14 @@
 .grant {
+  background-color: $color-primary;
+}
+
+.grant__wrapper {
   @include flex-box($align-items: flex-start, $justify-content: flex-start);
 
   gap: 30px;
-
   width: $mobile-min-width;
   margin: auto;
   padding: 70px 15px;
-  background-color: $color-primary;
   color: $color-light;
 
   @media (min-width: $tablet-min-width) {
@@ -120,7 +122,7 @@
 .grant__item {
   padding: 24px 25px;
   border: 1px solid $color-beige;
-  border-radius: 16px;
+  border-radius: $medium-border-radius;
   width: 275px;
   position: relative;
   color: $color-beige;

@@ -28,7 +28,7 @@
   height: 753px;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  border-radius: 16px;
+  border-radius: $medium-border-radius;
 
   background-image:
     image-set(
@@ -66,7 +66,7 @@
 }
 
 .main-form__container {
-  border-radius: 16px;
+  border-radius: $medium-border-radius;
   padding: 15px;
   width: 300px;
   background-color: $color-primary;

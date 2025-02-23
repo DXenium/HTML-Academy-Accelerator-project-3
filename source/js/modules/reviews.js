@@ -7,8 +7,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 
-
-const swiper = new Swiper('.reviews__swiper', {
+new Swiper('.reviews__swiper', {
   modules: [Navigation, Scrollbar],
 
   direction: 'horizontal',
@@ -51,6 +50,31 @@ const swiper = new Swiper('.reviews__swiper', {
       simulateTouch: false,
       spaceBetween: 32,
     }
+  },
+  on: {
+    afterInit: function () {
+      checkAndCloneSlides(this);
+    },
+    resize: function () {
+      checkAndCloneSlides(this);
+    }
   }
 });
 
+function checkAndCloneSlides(swiper) {
+  const slides = swiper.slides;
+  const minSlidesRequired = 6; // Минимальное количество слайдов для планшетов и десктопов
+
+  // Проверяем, что ширина экрана больше 768px (планшеты и десктопы)
+  if (window.innerWidth >= 1440 && slides.length < minSlidesRequired) {
+    const slidesToClone = minSlidesRequired - slides.length;
+
+    for (let i = 0; i < slidesToClone; i++) {
+      const clone = slides[i % slides.length].cloneNode(true);
+      swiper.wrapperEl.appendChild(clone);
+    }
+
+    // Обновляем Swiper после добавления новых слайдов
+    swiper.update();
+  }
+}

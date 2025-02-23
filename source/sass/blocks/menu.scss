@@ -1,7 +1,7 @@
 .menu {
   @include flex-box($align-items: flex-end);
 
-  z-index: 10;
+  z-index: 4;
   position: absolute;
   top: 0;
   right: 0;
@@ -11,13 +11,29 @@
   @include flex-box($flex-direction: row);
 
   gap: 20px;
-  width: 136px;
+  min-width: 136px;
   padding: 3px 4px 3px 20px;
-  transition: width 0.5s;
   will-change: width;
+  transition: background-color, color, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     padding: 4px 4px 4px 20px;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    background-color: $color-primary;
+    color: $color-light;
+
+    .menu__icon {
+      background-color: $color-light;
+      border-color: $color-primary;
+    }
+
+    .menu__icon::before {
+      background-color: $color-primary;
+    }
   }
 }
 
@@ -32,8 +48,8 @@
 
 .menu__icon::before {
   content: "";
-  width: 18px;
-  height: 8px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,9 +76,10 @@
   width: 286px;
   position: relative;
   display: grid;
+  z-index: 4;
   margin-block-start: 0.5lh;
   background-color: $color-primary;
-  border-radius: 16px;
+  border-radius: $medium-border-radius;
 
   overflow: hidden;
   line-height: 0;
@@ -84,31 +101,41 @@
   letter-spacing: 0.02em;
   color: #c1d3ed;
   transition: color, 0.5s;
+
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
+    color: $color-light;
+    outline: none;
+  }
 }
 
-.menu__link:hover,
-.menu__link:focus,
-.menu__link:focus-visible,
-.menu__link:active {
-  color: $color-light;
-  outline: none;
-}
-
-.menu__button.active {
+.menu__button.active-menu {
   width: 286px;
   color: $color-light;
   background-color: $color-primary;
 }
 
-.menu__button.active .menu__icon {
+.menu__button.active-menu .menu__icon {
   background-color: $color-light;
 }
 
-.menu__button.active .menu__icon::before {
+.menu__button.active-menu .menu__icon::before {
   mask-image: url("/__spritemap#sprite-ico-cross-view");
   background-color: $color-primary;
 }
 
-.menu__button.active ~ .menu__list {
+.menu__button.active-menu ~ .menu__list {
   line-height: 1.2;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $dark-overlay;
+  z-index: 3;
 }
