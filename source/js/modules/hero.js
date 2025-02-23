@@ -48,7 +48,7 @@ function showPagination() {
   }
 }
 
-function hidePgination() {
+function hidePagination() {
   const bulletWrapper = document.querySelector('.hero__bullet-wrapper');
   if (bulletWrapper) {
     bulletWrapper.classList.remove('swiper-pagination-visible');
@@ -88,7 +88,7 @@ new Swiper('.hero__swiper', {
 
   on: {
     init: function () {
-      hidePgination();
+      hidePagination();
       // Обновляем позицию при инициализации
       setTimeout(() => {
         throttledUpdateBulletPosition();
@@ -96,7 +96,7 @@ new Swiper('.hero__swiper', {
       }, 50);
     },
     transitionEnd: function () {
-      hidePgination();
+      hidePagination();
       // Обновляем позицию при смене слайда
       setTimeout(() => {
         throttledUpdateBulletPosition();
