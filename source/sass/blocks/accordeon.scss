@@ -19,7 +19,7 @@
   border-radius: 14px;
   padding: 20px 15px;
   text-align: left;
-  transition: color 1s, background-color 1s;
+  transition: color, background-color, border, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     padding: 30px;
@@ -28,14 +28,44 @@
   @media (min-width: $tablet-max-width) {
     padding: 40px;
   }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    background-color: $color-light;
+  }
+
+  &:active {
+    color: $color-active;
+    background-color: $color-light;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.accordeon__item:hover .accordeon__label::after,
+.accordeon__item:focus .accordeon__label::after,
+.accordeon__item:focus-visible .accordeon__label::after {
+  background-color: $color-light;
+  border: 1px solid $color-primary;
+  background-image: url("/__spritemap#sprite-ico-plus-view");
+  outline: none;
+}
+
+.accordeon__item:active .accordeon__label::after {
+  background-color: $color-active;
+  background-image: url("/__spritemap#sprite-ico-white-plus-view");
 }
 
 
-.accorden__label {
+.accordeon__label {
   @include flex-box($align-items: center, $justify-content: center, $flex-direction: row);
 
   cursor: pointer;
   flex-wrap: nowrap;
+  transition: color, background-color, background-image, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     justify-content: space-between;
@@ -43,7 +73,7 @@
   }
 }
 
-.accorden__label br {
+.accordeon__label br {
   display: none;
 
   @media (min-width: $tablet-min-width) {
@@ -55,17 +85,18 @@
   }
 }
 
-.accorden__label::after {
+.accordeon__label::after {
   content: "";
   width: 100%;
   max-width: 40px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: $big-border-radius;
   background-color: $color-primary;
   background-image: url("/__spritemap#sprite-ico-white-plus-view");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px 18px;
+  transition: color, background-color, background-image, border, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     align-self: flex-start;
@@ -75,7 +106,7 @@
 .accordeon__content {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 1s, padding-top 1s;
+  transition: grid-template-rows, padding-top, 1s;
 }
 
 .accordeon__content > p {
@@ -101,9 +132,31 @@
 .accordeon__item:has(.accordeon__input:checked) {
   background-color: $color-primary;
   color: $color-light;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    border: 2px solid $color-light;
+    outline: none;
+  }
+
+  &:active {
+    background-color: $color-active;
+  }
 }
 
-.accordeon__input:checked ~ .accorden__label::after {
+.accordeon__item:has(.accordeon__input:checked):hover .accordeon__label::after {
+  background-color: $color-primary;
+  border: 1px solid $color-light;
+  background-image: url("/__spritemap#sprite-ico-white-minus-view");
+}
+
+.accordeon__item:has(.accordeon__input:checked):active .accordeon__label::after {
+  background-color: $color-light;
+  background-image: url("/__spritemap#sprite-ico-minus-view");
+}
+
+.accordeon__input:checked ~ .accordeon__label::after {
   background-color: #ffffff;
   background-image: url("/__spritemap#sprite-ico-minus-view");
 }

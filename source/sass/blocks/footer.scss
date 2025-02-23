@@ -62,6 +62,26 @@
 .footer__link {
   text-decoration: none;
   color: $color-text;
+  transition: color, opacity, 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+    color: $color-primary;
+  }
+
+  &:focus,
+  &:focus-visible {
+    color: $color-primary;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-active;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
 }
 
 .footer__policy {
@@ -88,6 +108,39 @@
   color: $color-text;
   text-decoration: none;
   position: relative;
+  transition: color, opacity, 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+    color: $color-primary;
+
+    &::after {
+      background-color: $color-primary;
+      opacity: 0.7;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    color: $color-primary;
+    outline: none;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &:active {
+    color: $color-active;
+
+    &::after {
+      background-color: $color-active;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
 
   @media (min-width: $tablet-min-width) {
     font-size: 12px;

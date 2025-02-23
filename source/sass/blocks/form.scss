@@ -15,6 +15,8 @@
 .form__field-container {
   @include flex-box($align-items: flex-start, $justify-content: flex-start);
 
+  position: relative;
+
   gap: 12px;
   width: 100%;
 
@@ -53,38 +55,51 @@
   @include font ($size: 14px, $height: 18px);
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+  border-radius: $small-border-radius;
   min-height: 44px;
   width: 100%;
   padding: 15px 25px;
-  transition: background-color 0.5s;
-  background-color: transparent;
-}
-
-.form__select {
-  @include font ($size: 14px);
-
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background-image: url("/__spritemap#sprite-ico-white-select-view");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 16px 16px;
-  appearance: none;
-  border-radius: 8px;
-  min-height: 52px;
-  width: 96%;
-  padding: 15px 25px;
-  transition: background-color 0.5s;
-  cursor: pointer;
+  transition: background-color, border-color, 0.5s;
   background-color: transparent;
 
-  @media (min-width: $tablet-min-width) {
-    width: 100%;
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: $color-light;
+    outline: none;
   }
 }
 
 .form__option {
   @include font ($size: 14px);
+}
+
+.form__textarea {
+  @include font ($size: 14px, $height: 18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: $small-border-radius;
+  width: 100%;
+  padding: 15px 25px;
+  transition: background-color, border-color, 0.5s;
+  background-color: transparent;
+  min-height: 94px;
+  resize: none;
+
+  @media (min-width: $tablet-min-width) {
+    min-height: 88px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    min-height: 90px;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: $color-light;
+    outline: none;
+  }
 }
 
 .form__check-label {
@@ -104,67 +119,66 @@
 }
 
 .form__button-wrapper {
+  width: 100%;
+
   @media (min-width: $tablet-min-width) {
     margin-top: 24px;
   }
 }
 
 .form__submit-button {
-  @include flex-box($flex-direction: row, $justify-content: flex-end);
-  @include font ($size: 12px, $weight: 500);
-
+  color: $color-light;
   gap: 74px;
   letter-spacing: 0.24px;
-  width: 260px;
+  min-width: 260px;
   padding: 4px 4px 4px 20px;
   border: 1px solid $color-light;
-  border-radius: 30px;
-  text-decoration: none;
+  border-radius: $big-border-radius;
   background-color: transparent;
-  color: $color-light;
-  cursor: pointer;
 
   @media (min-width: $tablet-min-width) {
-    width: 352px;
-    font-size: 14px;
-    line-height: 14px;
-    padding-left: 30px;
+    min-width: 352px;
+    justify-content: flex-end;
     gap: 109px;
   }
 
   @media (min-width: $tablet-max-width) {
     padding: 4px 5px 4px 30px;
   }
-}
 
-.form__button-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 44px;
-  background-color: $color-light;
-  position: relative;
-  transition: background-color, 0.5s;
+  &:hover {
+    background-color: $color-light;
+    color: $color-primary;
 
-  @media (min-width: $tablet-min-width) {
-    width: 46px;
-    height: 46px;
+    .form__button-icon {
+      background-color: $color-primary;
+    }
+
+    .form__button-icon::before {
+      background-color: $color-light;
+    }
+  }
+
+  &:active {
+    background-color: $color-light;
+    color: rgba(49, 109, 194, 0.7);
+
+    .form__button-icon {
+      background-color: $color-primary;
+    }
+
+    .form__button-icon::before {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 
+.form__button-icon {
+  background-color: $color-light;
+}
+
 .form__button-icon::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: $color-primary;
-  mask-image: url("/__spritemap#sprite-ico-button-arrow-view");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: auto;
-  transition: background-color 0.5s, mask-image 0.5s;
 }
 
 .form__checkbox-mark {
@@ -175,20 +189,20 @@
   height: 20px;
   border-radius: 2px;
   background-color: $color-light;
-  transition: opacity 0.5s;
+  transition: opacity, background, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     top: 0;
   }
 }
 
-.form__check-label:hover + .form__checkbox-mark {
+.form__check-label:hover .form__checkbox-mark {
   opacity: 0.7;
 }
 
 .form__checkbox:focus + .form__checkbox-mark,
 .form__checkbox:focus-visible + .form__checkbox-mark {
-  outline: 1px solid $color-primary;
+  outline: 1px solid rgba(169, 175, 183, 0.5);
 }
 
 .form__checkbox:disabled + .form__checkbox-mark {
@@ -209,47 +223,41 @@
   mask-size: 10px 10px;
 }
 
+.form__check-label:hover .form__checkbox[type="checkbox"]:checked + .form__checkbox-mark {
+  background-color: $color-primary;
+}
+
+.form__check-label:hover .form__checkbox[type="checkbox"]:checked + .form__checkbox-mark::before {
+  background-color: $color-light;
+}
+
+.form__checkbox.error + .form__checkbox-mark {
+  border: 1px solid $color-error;
+  background: rgba(255, 94, 102, 0.2);
+}
+
 .form__field-container:hover .form__label {
   opacity: 1;
 }
 
 .form__field-container:hover .form__input,
-.form__field-container:active .form__input,
-.form__field-container:focus .form__input,
-.form__field-container:focus-visible .form__input,
-.form__field-container:hover .form__select,
-.form__field-container:active .form__select,
-.form__field-container:focus .form__select,
-.form__field-container:focus-visible .form__select {
-  border-color: $color-text;
+.form__field-container:hover .form__textarea {
+  border-color: $color-light;
   outline: none;
 }
 
-.form__input:disabled {
-  background: rgba(169, 175, 183, 0.2);
-  border: 1px solid rgba(169, 175, 183, 0.5);
+.form__input:disabled,
+.form__textarea:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0.4;
+  cursor: default;
 }
 
-.form__input:disabled .form__label {
+.form__field-container:has(:disabled) .form__label {
   opacity: 0.6;
 }
 
-.form__textarea {
-  @include font ($size: 14px, $height: 18px);
-
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  width: 100%;
-  padding: 15px 25px;
-  transition: background-color 0.5s;
-  background-color: transparent;
-  min-height: 94px;
-
-  @media (min-width: $tablet-min-width) {
-    min-height: 88px;
-  }
-
-  @media (min-width: $tablet-max-width) {
-    min-height: 90px;
-  }
+.form .error {
+  background: rgba(255, 94, 102, 0.2);
+  border: 1px solid $color-error;
 }

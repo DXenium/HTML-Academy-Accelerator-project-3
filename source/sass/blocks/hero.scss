@@ -1,32 +1,25 @@
 .hero {
-  width: $mobile-min-width;
+  width: 100vw;
   margin: auto;
-
-  @media (min-width: $tablet-min-width) {
-    width: $tablet-min-width;
-  }
-
-  @media (min-width: $tablet-max-width) {
-    width: $tablet-max-width;
-  }
 }
 
 .hero__slider .hero__item {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 290px auto;
   grid-template-rows: 229px auto 20px;
   position: relative;
-  max-width: $mobile-min-width;
+  width: 100vw;
   margin: 0 auto;
+  background-color: $color-primary;
 
   @media (min-width: $tablet-min-width) {
+    grid-template-columns: auto 678px auto;
     grid-template-rows: 687px auto 60px;
-    max-width: 768px;
   }
 
   @media (min-width: $tablet-max-width) {
+    grid-template-columns: auto 1240px auto;
     grid-template-rows: 433px auto 60px;
-    max-width: 1440px;
   }
 }
 
@@ -52,25 +45,33 @@
 .hero__image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 568px;
+  object-fit: cover;
+  object-position: center;
+
+  @media (min-width: $tablet-min-width) {
+    height: 1024px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    height: 800px;
+  }
 }
 
 .hero__content {
-  grid-column: 1 / -1;
+  grid-column: 2 / 3;
   grid-row: 2/ 3;
   z-index: 2;
   max-width: 290px;
-  margin: auto;
   position: relative;
 
   @media (min-width: $tablet-min-width) {
     max-width: 659px;
-    margin-left: 45px;
   }
 
   @media (min-width: $tablet-max-width) {
-    max-width: 968px;
-    margin-left: 100px;
+    max-width: 1440px;
+    width: 968px;
   }
 }
 
@@ -81,7 +82,7 @@
 
   @media (min-width: $tablet-min-width) {
     padding: 30px 40px 24px;
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 $big-border-radius $big-border-radius 0;
   }
 
   @media (min-width: $tablet-max-width) {
@@ -103,7 +104,7 @@
     max-width: 593px;
     gap: 50px;
     background: $color-light;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 $big-border-radius $big-border-radius;
   }
 
   @media (min-width: $tablet-max-width) {
@@ -137,7 +138,7 @@
   @media (min-width: $tablet-min-width) {
     padding: 0 20px 35px 40px;
     max-width: 305px;
-    border-radius: 0 0 0 30px;
+    border-radius: 0 0 0 $big-border-radius;
   }
 
   @media (min-width: $tablet-max-width) {
@@ -214,81 +215,36 @@
 }
 
 .hero__button {
-  @include flex-box($flex-direction: row);
-  @include font ($size: 12px, $weight: 500);
-
-  gap: 20px;
   padding: 4px 4px 4px 20px;
-  text-decoration: none;
-  color: $color-primary;
-  cursor: pointer;
 
   @media (min-width: $tablet-min-width) {
-    font-size: 14px;
-    line-height: 14px;
-    padding-left: 30px;
-    gap: 30px;
-  }
-
-  @media (min-width: $tablet-max-width) {
-    padding: 5px 5px 5px 30px;
+    padding: 5px 5px 3px 30px;
   }
 }
 
-.hero__button-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 44px;
-  background-color: $color-primary;
-  position: relative;
-  transition: background-color, 0.5s;
-
-  @media (min-width: $tablet-min-width) {
-    width: 46px;
-    height: 46px;
-  }
-}
-
-.hero__button-icon::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: $color-light;
-  mask-image: url("/__spritemap#sprite-ico-button-arrow-view");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: auto;
-  transition: background-color 0.5s, mask-image 0.5s;
-}
-
-.hero__swiper .hero__bulit-wrapper.swiper-pagination {
+.hero__swiper .hero__bullet-wrapper.swiper-pagination {
   @include flex-box($flex-direction: row);
 
   padding: 10px 12px;
-  top: 35.5%;
-  left: 15px;
   width: 80px;
   background: $color-light;
   height: 28px;
   border-radius: 12px 12px 0 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 
   @media (min-width: $tablet-min-width) {
-    left: 45px;
     width: 100px;
     padding: 14px 16px 26px;
     border-radius: 20px 20px 0 0;
   }
-
-  @media (min-width: $tablet-max-width) {
-    left: 100px;
-  }
 }
 
-.hero__bulit-wrapper::before {
+.hero__swiper .hero__bullet-wrapper.swiper-pagination-visible {
+  opacity: 1;
+}
+
+.hero__bullet-wrapper::before {
   content: "";
   position: absolute;
   left: 100%;
@@ -307,12 +263,13 @@
   }
 }
 
-.hero__swiper .hero__bulit-wrapper .swiper-pagination-bullet {
+.hero__swiper .hero__bullet-wrapper .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
   border: 2px solid $color-primary;
   background: transparent;
   opacity: 1;
+  transition: border-color, background-color, opacity, 0.5s;
 
   @media (min-width: $tablet-min-width) {
     width: 12px;
@@ -332,7 +289,7 @@
   }
 }
 
-.hero__swiper .hero__bulit-wrapper .swiper-pagination-bullet-active {
+.hero__swiper .hero__bullet-wrapper .swiper-pagination-bullet-active {
   background: $color-active;
   border-color: $color-active;
 }

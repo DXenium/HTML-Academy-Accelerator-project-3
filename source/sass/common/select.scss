@@ -1,0 +1,139 @@
+.select__native,
+.select__custom {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+}
+
+.select__custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+@media (hover: hover) {
+  .select__custom {
+    display: block;
+  }
+}
+
+@media (hover: hover) {
+  .select__native:focus + .select__custom {
+    display: none;
+  }
+}
+
+.select__native:focus,
+.select__custom.is-active .select__custom-trigger {
+  outline: none;
+  border: 1px solid $color-light;
+}
+
+.select__wrapper {
+  width: 96%;
+  position: relative;
+
+  @media (min-width: $tablet-min-width) {
+    width: 100%;
+  }
+}
+
+.select__label {
+  @include font ($size: 12px, $height: 14px);
+
+  display: block;
+  opacity: 0.8;
+  color: $color-beige;
+  transition: opacity 0.5s;
+
+  @media (min-width: $tablet-min-width) {
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  @media (min-width: $tablet-max-width) {
+    line-height: 18px;
+  }
+}
+
+.select__native,
+.select__custom-trigger {
+  @include font ($size: 14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: $small-border-radius;
+  min-height: 52px;
+  padding: 15px 25px;
+  transition: background-color, border-color, 0.5s;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover {
+    border-color: $color-text;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: $color-light;
+    outline: none;
+  }
+}
+
+.select__native {
+  background-image: url("/__spritemap#sprite-ico-white-select-view");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px 16px;
+  appearance: none;
+}
+
+.select__custom-trigger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding: 18px 25px;
+  cursor: pointer;
+}
+
+.select__custom-options {
+  @include font ($size: 14px);
+
+  position: absolute;
+  top: 55px;
+  left: 0;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #ffffff;
+  z-index: 1;
+  padding: 1px;
+  display: none;
+  color: $color-text;
+}
+
+.select__custom.is-active .select__custom-options {
+  display: block;
+}
+
+.select__custom-option {
+  position: relative;
+  padding: 15px 20px;
+  padding-left: 2.5rem;
+}
+
+.select__custom-option.is-hover,
+.select__custom-option:hover {
+  background-color: $color-primary;
+  color: $color-light;
+  cursor: default;
+}
+
+.select__native:focus {
+  transform: scaleY(-1);
+}
+
+.select__wrapper:has(.select__custom.is-active) .select__native {
+  transform: scaleY(-1);
+}

@@ -8,7 +8,7 @@
   overflow: hidden;
   line-height: 0;
   color: transparent;
-  transition: line-height 0.5s, color 0.5s;
+  transition: line-height, color, 0.5s;
 }
 
 .submenu__item {
@@ -24,6 +24,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: #c1d3ed;
+  transition: color, 0.5s;
 }
 
 .submenu__link:hover,
@@ -34,7 +35,7 @@
   outline: none;
 }
 
-.submenu::after {
+.submenu__parent::after {
   content: "";
   position: absolute;
   margin-left: 10px;
@@ -49,10 +50,10 @@
   transition: transform 0.5s;
 }
 
-.submenu.active ~ .submenu__list {
+.submenu__parent.active-sub ~ .submenu__list {
   line-height: 1.2;
 }
 
-.submenu.active::after {
+.submenu__parent.active-sub::after {
   transform: rotate(180deg);
 }

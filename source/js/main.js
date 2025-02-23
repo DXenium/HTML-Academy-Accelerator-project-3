@@ -1,12 +1,9 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
-
-
-import './menu';
-import './hero';
-import './popup';
-import './programs';
-import './news';
-import './reviews';
+import './modules/menu';
+import './modules/hero';
+import './modules/popup';
+import './modules/programs';
+import './modules/news';
+import './modules/reviews';
+import './modules/validation';
+import './modules/select';
+import './modules/phone-mask';
