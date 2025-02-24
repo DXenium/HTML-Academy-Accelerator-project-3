@@ -198,7 +198,7 @@
 
   .news__slide-content {
     @media (min-width: $tablet-max-width) {
-      max-width: 78%;
+      max-width: 77.5%;
     }
   }
 
@@ -206,6 +206,7 @@
     @media (min-width: $tablet-max-width) {
       max-width: 91%;
       padding-top: 18px;
+      padding-bottom: 6px;
     }
   }
 
@@ -246,7 +247,7 @@
   }
 
   @media (min-width: $tablet-max-width) {
-    max-width: 84%;
+    max-width: 84.5%;
   }
 }
 
@@ -308,8 +309,8 @@
 
   @media (min-width: $tablet-max-width) {
     line-height: 26px;
-    max-width: 80%;
-    padding-bottom: 5px;
+    max-width: 79%;
+    padding-bottom: 4px;
   }
 }
 
