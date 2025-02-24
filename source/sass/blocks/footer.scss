@@ -59,6 +59,12 @@
   }
 }
 
+.footer__item:nth-child(4) {
+  @media (min-width: $tablet-min-width) {
+    margin-left: 2px;
+  }
+}
+
 .footer__link {
   text-decoration: none;
   color: $color-text;
