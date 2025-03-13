@@ -497,7 +497,7 @@
 
 
 .swiper-pagination-bullets.swiper-pagination-clickable.news__custom-pagination {
-  max-width: 152px;
+  width: fit-content;
   left: 50%;
   transform: translateX(-50%);
   bottom: 50px;
@@ -508,7 +508,6 @@
   overflow: hidden;
 
   @media (min-width: $tablet-min-width) {
-    max-width: 188px;
     bottom: 50px;
     gap: 20px;
   }
