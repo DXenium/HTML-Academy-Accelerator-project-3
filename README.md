@@ -63,4 +63,4 @@
 
 Ссылка на сайт: [тут](https://dxenium.github.io/HTML-Academy-Accelerator-project-3/)
 
-![Первый экран]()
+![Первый экран](printscreen.png "Первый экран")
