@@ -60,3 +60,7 @@
 - JavaScript (ES6+)
 - Методология БЭМ
 - Сборка на основе предоставленного инструмента
+
+Ссылка на сайт: [тут](https://dxenium.github.io/HTML-Academy-Accelerator-project-3/)
+
+![Первый экран]()
